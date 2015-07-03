@@ -1,22 +1,28 @@
 var rrpApp = angular.module('rrpApp', [
-  'phonecatControllers'
+  'ngRoute',
+  'rrpCtrl'
 ]);
 
-
-/*
 rrpApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/course', {
-        templateUrl: 'views/courselist.html',
-        controller: 'CourseList'
+        templateUrl: 'views/courseList.html',
+        controller: 'CourseListCtrl'
       }).
-      when('/phones/:phoneId', {
-        templateUrl: 'partials/phone-detail.html',
-        controller: 'PhoneDetailCtrl'
+      when('/course/:courseName', {
+        templateUrl: 'views/courseDetail.html',
+        controller: 'CourseDetailCtrl'
+      }).
+      when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'CourseDetailCtrl'
+      }).
+      when('/register', {
+        templateUrl: 'views/register.html',
+        controller: 'CourseDetailCtrl'
       }).
       otherwise({
-        redirectTo: '/phones'
+        redirectTo: '/course'
       });
   }]);
-*/
