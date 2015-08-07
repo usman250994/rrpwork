@@ -1,9 +1,9 @@
 # Change these
-server 'your_server_ip', port: your_port_num, roles: [:web, :app, :db], primary: true
+server '104.236.125.9', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'https://eltafhussain@bitbucket.org/eltafhussain/sample_app.git'
-set :application,     'appname'
-set :user,            'deployer'
+set :application,     'rrpApp'
+set :user,            'root'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 
@@ -24,8 +24,8 @@ set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
 
 ## Defaults:
-# set :scm,           :git
-# set :branch,        :master
+ set :scm,           :git
+ set :branch,        :master
 # set :format,        :pretty
 # set :log_level,     :debug
 # set :keep_releases, 5
