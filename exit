@@ -1,0 +1,108 @@
+[33mcommit 08755899fc80132f5ded1a55352d020641109c44[m
+Author: Eltaf Hussain <watandosth@gmail.com>
+Date:   Fri Aug 7 08:02:36 2015 +0000
+
+    add user index
+
+[33mcommit f5a15c88dc68b74e5c62e70447fbee2011e0e7ea[m
+Author: Eltaf Hussain <watandosth@gmail.com>
+Date:   Thu Aug 6 19:56:03 2015 +0000
+
+    Set up Puma, Nginx & Capistrano
+
+[33mcommit 2910fa248eae26aeb5021185aa11bb1ea476108f[m
+Author: Eltaf Hussain <watandosth@gmail.com>
+Date:   Thu Aug 6 11:49:13 2015 +0000
+
+    adding rrp name and logo
+
+[33mcommit 791b5dc5bb8d8c49f3f5c1ec7f9c066e7d184b3e[m
+Author: Eltaf Hussain <watandosth@gmail.com>
+Date:   Thu Aug 6 11:38:41 2015 +0000
+
+    login and logout final
+
+[33mcommit fd74344485899e249e3f3a65b72a662fd5b201d6[m
+Author: Eltaf Hussain <watandosth@gmail.com>
+Date:   Thu Aug 6 09:04:52 2015 +0000
+
+    Use SSL and the Puma webserver in production
+
+[33mcommit 9e8165f756ace1c211cc98aaf9d80aa91b68f986[m
+Author: Eltaf Hussain <watandosth@gmail.com>
+Date:   Thu Aug 6 08:47:24 2015 +0000
+
+    Finish user signup
+
+[33mcommit af72880807976260ae1332fedc07c1d228d22ad9[m
+Author: Eltaf Hussain <watandosth@gmail.com>
+Date:   Thu Aug 6 07:52:42 2015 +0000
+
+    adding sign-up
+
+[33mcommit 954302cedec9f05f3cfbb0f2c7e14bfa29c3c7a3[m
+Author: Eltaf Hussain <watandosth@gmail.com>
+Date:   Thu Aug 6 06:51:21 2015 +0000
+
+    Make a basic User model (including secure passwords)
+
+[33mcommit ede51f744b656ec5f45b96da7ae9b9b3be3c7b34[m
+Author: Eltaf Hussain <watandosth@gmail.com>
+Date:   Wed Aug 5 11:19:33 2015 +0000
+
+    finished layout and routing
+
+[33mcommit 460129cd17db08e5cedca24d334987fb0fd64f5d[m
+Merge: dd5d538 070a48b
+Author: Eltaf Hussain <watandosth@gmail.com>
+Date:   Wed Aug 5 10:57:42 2015 +0000
+
+    Merge branch 'master' into filling-in-layout
+
+[33mcommit 070a48bf37c03310b438a254c3e79f40a15fb0d6[m
+Author: Eltaf Hussain <watandosth@gmail.com>
+Date:   Wed Aug 5 10:55:24 2015 +0000
+
+    pid
+
+[33mcommit b2f6c86e5fe5d61e73e76e389538b329974fd167[m
+Author: Eltaf Hussain <watandosth@gmail.com>
+Date:   Wed Aug 5 10:44:10 2015 +0000
+
+    Modify css and routing
+
+[33mcommit dd5d5388ff076a8946e360580ae1df645d7ee14f[m
+Author: Eltaf Hussain <watandosth@gmail.com>
+Date:   Wed Aug 5 10:41:10 2015 +0000
+
+    Routing layout & modifying CSS
+
+[33mcommit f6f6f58680c9a5714b165d685d465d45bdcc5347[m
+Author: Eltaf Hussain <watandosth@gmail.com>
+Date:   Wed Aug 5 05:30:12 2015 +0000
+
+    Added application helper
+
+[33mcommit 97fb6c92c5ef96e6664a30822ca0df1a18d97962[m
+Author: Eltaf Hussain <watandosth@gmail.com>
+Date:   Tue Aug 4 09:22:42 2015 +0000
+
+    Finish static pages
+
+[33mcommit 8d4c5e6eb2769786d723de0ab8be871232dd269a[m
+Author: Eltaf Hussain <watandosth@gmail.com>
+Date:   Tue Aug 4 06:44:40 2015 +0000
+
+    add static pages controller
+
+[33mcommit f3a6a6606c143ad11ee530abd26252692c6dc196[m
+Author: Eltaf Hussain <watandosth@gmail.com>
+Date:   Tue Aug 4 06:20:54 2015 +0000
+
+    add hello
+
+[33mcommit 0f4d76e09eb338fe3f3e0e1420d5fd816d78ea7f[m
+Author: Eltaf Hussain <watandosth@gmail.com>
+Date:   Tue Aug 4 06:04:34 2015 +0000
+
+    initial repo of sample app
