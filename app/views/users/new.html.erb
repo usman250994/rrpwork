@@ -19,7 +19,16 @@
       <%= f.password_field :password_confirmation, class: 'form-control' %>
       
       <%= f.label :role %>
-      <%= f.select :role, [['Student','student'],['Learner Coach','lc'],['Program Manager','pm'],['Administrator','admin']] , class: 'selectpicker' %>
+      <% case current_user.role %>
+        <% when 'admin' %>
+          <%= f.select :role, [['Student','student'],['Learner Coach','lc'],
+                              ['Program Manager','pm'],['Admini strator','admin']],
+                              class: 'selectpicker' %>
+        <% when 'pm' %>
+          <%= f.select :role, [['Student','student'],['Learner Coach','lc']],
+                              class: 'selectpicker' %>
+      <% end %>
+      
 
       <%= f.submit "Create Student account", class: "btn btn-primary" %>
     <% end %>

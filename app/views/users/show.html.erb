@@ -17,10 +17,10 @@
           <% when 'pm' %>
             <p> 
               <%= link_to 'View All Students', students_path %>    | 
-              <%= link_to 'Register New Student', students_path %> | | View LC | Register New LC | </p>
+              <%= link_to 'Register New Student', new_user_path %> | | View LC | Register New LC | </p>
           <% when 'lc' %>
             <p> <%= link_to 'View All Students', users_path %> | <%= link_to "Edit Profile", edit_user_path(current_user) %> </p>
-          <% end %>
+        <% end %>
        
         
      
