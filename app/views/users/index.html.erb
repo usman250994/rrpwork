@@ -1,13 +1,20 @@
 <% provide(:title, 'All users') %>
-<h1>All users</h1>
+<h1>All Students List</h1>
 
 <%= will_paginate %>
 <ul class="users">
   <% @users.each do |user| %>
-    <% if user.role ="student"%>
+    <% if user.student? %>
       <li>
         <%= gravatar_for user, size: 50 %>
-        <%= link_to user.name, user %>
+        <%= link_to user.name, user %> <br>
+        <p>
+          <% if current_user.admin?  %>
+            <%= link_to "Edit",edit_user_path(user) %> |
+            <%= link_to "delete", user, method: :delete,
+                                        data: { confirm: "You sure?" } %>
+          <% end %>
+        </p>
       </li>
     <% end %>
   <% end %>

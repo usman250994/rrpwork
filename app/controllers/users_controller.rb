@@ -2,11 +2,19 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
   
   def index
+    #@users = User.find_by(role: 'student').paginate(page: params[:page])
+    #@users = @user
+    #@users = User.where(role: 'student')
     @users = User.paginate(page: params[:page])
+    
   end
   
   def new
-    @user = User.new
+    if current_user.admin? || current_user.pm?
+      @user = User.new
+    else
+      redirect_to current_user
+    end
   end
   
   def show
@@ -21,9 +29,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      log_in @user
-      flash[:success] = "Welcome to the Sample App!"
-      redirect_to @user
+      #log_in @user
+      flash[:success] = "New Records has been added!"
+      redirect_to students_path
     else
       render 'new' 
     end
