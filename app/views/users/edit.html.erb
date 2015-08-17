@@ -17,13 +17,70 @@
 
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
+      
+      <%= f.label :images %>
+     <%= f.hidden_field :images, :value => "" %>
+      
+      
 
+      
+      <%= f.label :role %>
+      <% case current_user.role %>
+        <% when 'admin' %>
+          <%= f.select :role, [['Student','student'],['Learner Coach','lc'],
+                              ['Program Manager','pm'],['Admini strator','admin']],
+                              class: 'selectpicker' %>
+        <% when 'pm' %>
+          <%= f.select :role, [['Student','student'],['Learner Coach','lc']],
+                              class: 'selectpicker' %>
+      <% end %>
+      
       <%= f.submit "Save changes", class: "btn btn-primary" %>
     <% end %>
 
-    <div class="gravatar_edit">
-      <%= gravatar_for @user %>
-      <a href="http://gravatar.com/<%= @user.email %>" target="_blank">change</a>
-    </div>
+    
+<div id="results">Your captured image will appear here...</div>
+<h1>Webcam Pictures</h1>
+<div id="my_camera"></div>
+
+
+
+
+
+
+
+<script type="text/javascript" src="webcam.js"></script>
+
+<script language="JavaScript">
+  Webcam.set({
+    width: 320,
+    height: 240,
+    image_format: 'jpeg',
+    jpeg_quality: 90
+  });
+  Webcam.attach( '#my_camera' );
+</script>
+
+
+<form>
+  <input type=button value="Take Snapshot" onClick="take_snapshot()">
+</form>
+
+
+<script language="JavaScript">
+  function take_snapshot() {
+    // take snapshot and get image data
+    Webcam.snap( function(data_uri) {
+      // display results in page
+      document.getElementById('results').innerHTML =
+        '<h2>Here is your image:</h2>' +
+        '<img src="'+data_uri+'"/>';
+          //alert(data_uri);
+          document.getElementById('user_images').value = data_uri;
+
+    });
+  }
+</script>
+
   </div>
 </div>

@@ -2,22 +2,36 @@
 <div class="row">
   <aside class="col-md-10">
     <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-      <p><%= @user.email %> | <%= @user.role %></p>
-      <hr>
+      <h3>
+        <%= @user.name %><br/>
+
+            <%= @user.email %> | <%= @user.role %>
+      </h3>
+  
+  <div class="img">
+     <%= image_tag(@user.images, :align=> "middle") %>
+ <div class="desc"><%= @user.name %><br/> <%= @user.email %> | <%= @user.role %> </div>
+</div>
+  
+  
+  
+  
+  
+  
+  
+  
       
         <% case current_user.role %>
           <% when 'admin' %>
             <p>
-              <%= link_to 'View All Students', students_path %>    | 
-              <%= link_to 'Register New Student', new_user_path %> | View LCs | Register New LC | View PMs</p>
+              <%= link_to 'Students', students_path %> <br/>
+              <%= link_to 'Programs', new_user_path %> <br/>
+              <%= link_to 'Learning Coaches', students_path %><br/>
+              <%= link_to 'Program Managers', new_user_path %> | </p>
           <% when 'pm' %>
             <p> 
-              <%= link_to 'View All Students', students_path %>    | 
-              <%= link_to 'Register New Student', new_user_path %> | | View LC | Register New LC | </p>
+               | wait in process
+              
           <% when 'lc' %>
             <p> <%= link_to 'View All Students', users_path %> | <%= link_to "Edit Profile", edit_user_path(current_user) %> </p>
         <% end %>

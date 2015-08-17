@@ -9,6 +9,11 @@ class UsersController < ApplicationController
     
   end
   
+  def images
+    @user = User.find(params[:id])
+  end
+  
+
   def new
     if current_user.admin? || current_user.pm?
       @user = User.new
@@ -18,7 +23,6 @@ class UsersController < ApplicationController
   end
   
   def show
-    
      @user = User.find(params[:id])
   end
   
@@ -41,7 +45,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       flash[:success] = "Profile updated"
-      redirect_to @user
+      redirect_to students_path
     else
       render 'edit'
     end
@@ -53,11 +57,13 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
+
   private
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation)
+                                   :password_confirmation, :images)
     end
+    
   
   # Confirms a logged-in user.
   def logged_in_user
@@ -66,5 +72,5 @@ class UsersController < ApplicationController
       redirect_to login_url
     end
   end
-  
+
 end

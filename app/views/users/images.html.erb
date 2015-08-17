@@ -1,0 +1,62 @@
+<% provide(:title, "Images user") %>
+<h1>Upload your picture</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  
+  
+    <%= form_for(@user) do |f| %>
+
+
+ <%= f.label :image %>
+      <%= f.text_field :images, class: 'form-control' %>
+
+
+  
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+    <% end %>
+ 
+  </div>
+</div>
+
+<div id="results">Your captured image will appear here...</div>
+<h1>Webcam Pictures</h1>
+<div id="my_camera"></div>
+
+
+
+
+
+
+
+<script type="text/javascript" src="webcam.js"></script>
+
+<script language="JavaScript">
+  Webcam.set({
+    width: 320,
+    height: 240,
+    image_format: 'jpeg',
+    jpeg_quality: 90
+  });
+  Webcam.attach( '#my_camera' );
+</script>
+
+
+<form>
+  <input type=button value="Take Snapshot" onClick="take_snapshot()">
+</form>
+
+
+<script language="JavaScript">
+  function take_snapshot() {
+    // take snapshot and get image data
+    Webcam.snap( function(data_uri) {
+      // display results in page
+      document.getElementById('results').innerHTML =
+        '<h2>Here is your image:</h2>' +
+        '<img src="'+data_uri+'"/>';
+
+
+    });
+  }
+</script>

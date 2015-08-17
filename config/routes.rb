@@ -8,9 +8,12 @@ Rails.application.routes.draw do
   get 'contact' => 'static_pages#contact'
   get 'students/new'  => 'users#new'
   
+  #get 'images'  => 'users#images'
+  
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
+  get 'images/:id' => 'users#images'
   
   resources :users
 
